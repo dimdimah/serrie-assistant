@@ -1,0 +1,15 @@
+{
+  "8616124441": {
+    "transaksi": [
+      {
+        "tipe": "masuk",
+        "jumlah": 850000.0,
+        "kategori": "gaji",
+        "keterangan": "gajian bulan februari",
+        "tanggal": "2026-03-02 18:43:31"
+      }
+    ],
+    "budget": {},
+    "notif": false
+  }
+}
