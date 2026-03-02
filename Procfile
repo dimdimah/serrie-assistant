@@ -1,1 +1,1 @@
-worker: python bot-tele.py
+worker: python bot.py

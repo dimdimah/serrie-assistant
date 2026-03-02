@@ -145,9 +145,15 @@ def export_transaksi_csv(user_id):
     if not transaksi:
         return None
 
-    filename = f"transaksi_{user_id}.csv"
+    folder = "history"
 
-    with open(filename, "w", newline="", encoding="utf-8") as file:
+    # buat folder jika belum ada
+    os.makedirs(folder, exist_ok=True)
+
+    filename = f"transaksi_{user_id}.csv"
+    filepath = os.path.join(folder, filename)
+
+    with open(filepath, "w", newline="", encoding="utf-8") as file:
         writer = csv.writer(file)
 
         writer.writerow([
@@ -167,7 +173,7 @@ def export_transaksi_csv(user_id):
                 t["jumlah"]
             ])
 
-    return filename
+    return filepath
 # ── Notifikasi Otomatis ───────────────────────────────────────────────────────
 async def kirim_notif_malam(context: ContextTypes.DEFAULT_TYPE):
     data = load_data()
